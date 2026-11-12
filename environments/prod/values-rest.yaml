@@ -1,0 +1,12 @@
+rest:
+  replicaCount: 2
+  image:
+    repository: 504483086241.dkr.ecr.us-east-1.amazonaws.com/petclinic-rest
+    tag: v1 # Only bumped when promoting an approved release
+  resources:
+    requests:
+      cpu: 500m
+      memory: 768Mi
+    limits:
+      cpu: 1500m
+      memory: 1536Mi

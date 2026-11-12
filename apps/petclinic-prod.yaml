@@ -8,19 +8,21 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/shyamsundarsr/eks-gitops-demo.git
-    targetRevision: petclinic-eks-gitops
-    path: .
+    repoURL: https://github.com/srshyam/aws-eks-gitops.git
+    targetRevision: petclinic-eks-helm-autoscaling
+    path: charts/petclinic
     helm:
       valueFiles:
         - values.yaml
-        - values-prod.yaml
+        - ../../environments/prod/values-common.yaml
+        - ../../environments/prod/values-rest.yaml
+        - ../../environments/prod/values-angular.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: prod
+    namespace: petclinic-prod
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: false     # Set to false for prod safety to prevent accidental deletions
+      selfHeal: true   # Corrects manual drift in the cluster back to Git state
     syncOptions:
       - CreateNamespace=true
