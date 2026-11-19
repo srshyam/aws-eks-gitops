@@ -2,7 +2,7 @@ angular:
   replicaCount: 1
   image:
     repository: 504483086241.dkr.ecr.us-east-1.amazonaws.com/petclinic-angular
-    tag: f6696e14ce2f2f30c8392e5dc451405347773d60
+    tag: 0f04613a903e562bfcf9202c3c493d4b9a6306d5
   resources:
     requests:
       cpu: 50m
