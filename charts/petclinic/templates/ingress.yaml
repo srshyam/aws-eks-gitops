@@ -7,8 +7,13 @@ metadata:
     {{- toYaml .Values.ingress.annotations | nindent 4 }}
 spec:
   ingressClassName: {{ .Values.ingress.className }}
-  rules:
+rules:
+  {{- if .Values.ingress.host }}
+  - host: {{ .Values.ingress.host | quote }}
+    http:
+  {{- else }}
   - http:
+  {{- end }}
       paths:
       - path: /petclinic/api
         pathType: Prefix
