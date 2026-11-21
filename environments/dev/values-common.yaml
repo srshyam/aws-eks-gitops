@@ -1,2 +1,19 @@
 global:
   environment: dev
+
+mysql:
+  storage: 5Gi
+  database: petclinic
+  user: petclinic
+  password: petclinicpassword
+  rootPassword: rootpassword
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+ingress:
+  host: petclinic-dev.shyamdevops.online

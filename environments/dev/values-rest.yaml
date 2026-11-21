@@ -1,7 +1,6 @@
 rest:
   replicaCount: 1
   image:
-    repository: 504483086241.dkr.ecr.us-east-1.amazonaws.com/petclinic-rest
     tag: 22810968d16d077ad7a885a0d8a9b159e1b80768
   resources:
     requests:
