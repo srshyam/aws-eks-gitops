@@ -1,7 +1,7 @@
 angular:
   replicaCount: 1
   image:
-    tag: 0f04613a903e562bfcf9202c3c493d4b9a6306d5
+    tag: cef9fe04cd4458e5bc2197dbbe6e9050fdf185fa
   resources:
     requests:
       cpu: 50m
